@@ -1,0 +1,26 @@
+{
+  "name": "test-site-marchenko",
+  "title": "Test Site Marchenko",
+  "description": "Marchenko's WEB Project",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Vitaliy/untitled",
+  "author": {
+    "name": "Rickard31",
+    "email": "vitalka.marchenko@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Vitaliy/untitled.git"
+  },
+  "bugs": "https://github.com/Vitaliy/untitled/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Vitaliy/untitled/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}

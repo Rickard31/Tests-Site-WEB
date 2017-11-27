@@ -1,0 +1,8 @@
+<div class="single-choice-question">
+    <span class="question"> <%= question.text %> </span>
+    <form>
+        <% for(var i = 0; i<question.options.length; i++){ %>
+        <input type="radio" name="<%= question.id %>" value="<%= question.options[i].correctness %>"> <%= question.options[i].text %> <br>
+        <% } %>
+    </form>
+</div>
