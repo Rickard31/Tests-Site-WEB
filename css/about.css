@@ -1,0 +1,74 @@
+body {
+  margin-right: 1%;
+  margin-left: 1%;
+  background-color: #e5e5e5;
+}
+body div {
+  border-radius: 5px;
+}
+header {
+  font-size: 1.5em;
+  max-height: 4em;
+  margin-bottom: 10px;
+  text-align: center;
+  z-index: 10;
+  vertical-align: middle;
+}
+header img {
+  max-height: 4em;
+}
+ul#navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+ul#navbar li {
+  float: left;
+  width: calc(33.33333333%);
+  background-color: #323232;
+  color: white;
+  text-decoration: none;
+  border-left: 1px solid orange;
+  border-right: 1px solid orange;
+}
+ul#navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+ul#navbar li a:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #0c0c0c;
+}
+ul#navbar li a:visited {
+  color: white;
+  text-decoration: none;
+}
+footer {
+  margin: auto;
+  text-align: center;
+  font-size: 0.8em;
+}
+footer .many-small-icons {
+  display: inline-block;
+  box-sizing: border-box;
+}
+footer .many-small-icons img {
+  height: 1.1em;
+}
+.container-fluid {
+  margin-top: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid grey;
+  min-height: 530px;
+}
+.container-fluid .row {
+  height: 530px;
+}
+.container-fluid #google-map {
+  height: 530px;
+}

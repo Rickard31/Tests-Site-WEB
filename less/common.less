@@ -4,15 +4,16 @@ body {
   margin-left: @margin-side;
   background-color: #e5e5e5;
 
-  div{
+  div {
     border-radius: 5px;
   }
 }
 
 @header-max-height: 4em;
 header {
+  margin-top: 2px;
   font-size: 1.5em;
-  max-height: @header-max-height;
+  height: @header-max-height;
   margin-bottom: 10px;
   text-align: center;
   z-index: 10;
@@ -21,44 +22,83 @@ header {
   img {
     max-height: @header-max-height;
   }
+
+  img.slide {
+    display: none;
+  }
 }
 
 @nav-menu-background-color: #323232;
-
- ul#navbar {
-  list-style-type: none;
+#navbar {
+  z-index: 10;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  list-style: none;
+  //border: 1px solid #e5e5e5;
+  background-color: @nav-menu-background-color;
+  font-weight: 700;
+  font-size: 1.5em;
 
   li {
-    float: left;
     width: calc(100% / 3);
-    background-color: @nav-menu-background-color;
+    text-align: center;
+  }
+
+  a {
+    display: block;
+    margin-left: -1px;
+    padding: 8px 10px;
     color: white;
-    text-decoration: none;
     border-left: 1px solid orange;
-    border-right:1px solid orange;
+    text-decoration: none;
 
-    a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 16px;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: white;
-      text-decoration: none;
-      background-color: darken(@nav-menu-background-color, 15%);
-    }
-
-    a:visited {
-      color: white;
+    &:hover {
+      background: darken(@nav-menu-background-color, 10%);
       text-decoration: none;
     }
   }
+
+  .opened .sub-menu {
+    display: block;
+  }
+
+  .sub-menu {
+    z-index: 10;
+    position: absolute;
+    left: 1px;
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: @nav-menu-background-color;
+    text-align: center;
+
+    li {
+      width: 100%;
+    }
+
+    a {
+      margin-bottom: -1px;
+      width: 100%;
+      border: 1px solid orange;
+    }
+  }
+}
+
+#navbar > li {
+  position: relative;
+  display: inline-block;
+  margin-right: -4px;
+}
+
+#navbar > li:hover .sub-menu {
+  display: block;
+}
+
+#navbar > .opened > a {
+  background: @nav-menu-background-color;
+  color: white;
 }
 
 footer {
@@ -70,9 +110,14 @@ footer {
   .many-small-icons {
     display: inline-block;
     box-sizing: border-box;
+    margin-bottom: 1px;
 
     img {
       height: 1.1em;
     }
   }
 }
+
+
+
+

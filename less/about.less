@@ -7,11 +7,38 @@
   border-bottom: 1px solid grey;
   min-height: @container-height;
 
-  .row{
+  .row {
     height: @container-height;
   }
 
-  #google-map{
+  #google-map {
     height: @container-height;
   }
+
+  @gallery-height: 300px;
+  #gallery{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    height: calc(@gallery-height + 30px);
+    overflow-y: hidden;
+    overflow-x: auto;
+    border: 1px solid black;
+
+    div{
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    img{
+      height: @gallery-height !important;
+      margin-left: 10px;
+      margin-right: 10px;
+      border: 1px solid orange;
+    }
+  }
 }
+
+

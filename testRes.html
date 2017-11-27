@@ -22,16 +22,20 @@
 
 <ul id="navbar">
     <li style="border-left: 0"><a href="index.html">Home</a></li>
-    <!--<li><a href="test.html">Test</a></li>-->
-    <li><a href="statistics.html">Statistics</a></li>
+    <li><a href="statistics.html">Statistics</a>
+        <ul class="sub-menu">
+            <li><a href="statistics.html">Global</a></li>
+            <li><a href="testRes.html">Last Test</a></li>
+        </ul>
+    </li>
     <li style="border-right: 0"><a href="about.html">About</a></li>
 </ul>
 
 
 <div id="stats-block">
-    <p>Your result is <span id="res-score"></span></p>
-    <p>Your time is <span id="res-time"></span></p>
-    <a href="test.html"><button class="btn btn-danger">Retry</button></a>
+    <p>Your result is <span id="res-score">10/20</span></p>
+    <p>Your time is <span id="res-time">5m 12s</span></p>
+    <a href="test.html"><button class="btn btn-danger">Try Again</button></a>
 </div>
 
 

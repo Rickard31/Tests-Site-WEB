@@ -4,9 +4,132 @@ var test_list = [
         id: 1,
         name: 'First Test',
         description: 'Description',
-        category: 'Category1/SubcategoryП__ A Placeholder Placeholder DELETE',
+        category: 'Category1/SubcategoryП__ A Placeholder Placeholder DELETE sdfkjsdkajflsdakjf;sdaljf;sdalfsda',
         questions: [
             {
+                id: 001,
+                text: 'Question One',
+                type: 'single-choice',
+                options: [
+                    {
+                        correctness: false,
+                        text: 'Wrong Answer'
+                    },
+                    {
+                        correctness: true,
+                        text: 'Right Answer'
+                    },
+                    {
+                        correctness: false,
+                        text: 'Wrong Anwer'
+                    }
+                ]
+            }, {
+                id: 002,
+                text: 'Question Two',
+                type: 'multiple-choice',
+                options: [
+                    {
+                        correctness: false,
+                        text: 'Wrong Answer'
+                    },
+                    {
+                        correctness: true,
+                        text: 'Right Answer'
+                    },
+                    {
+                        correctness: false,
+                        text: 'Wrong Answer'
+                    }
+                ]
+            }, {
+                id: 003,
+                text: "Question Three",
+                type: 'single-line',
+                answer: "Answer"
+            }, {
+                id: 001,
+                text: 'Question One',
+                type: 'single-choice',
+                options: [
+                    {
+                        correctness: false,
+                        text: 'Wrong Answer'
+                    },
+                    {
+                        correctness: true,
+                        text: 'Right Answer'
+                    },
+                    {
+                        correctness: false,
+                        text: 'Wrong Anwer'
+                    }
+                ]
+            }, {
+                id: 002,
+                text: 'Question Two',
+                type: 'multiple-choice',
+                options: [
+                    {
+                        correctness: false,
+                        text: 'Wrong Answer'
+                    },
+                    {
+                        correctness: true,
+                        text: 'Right Answer'
+                    },
+                    {
+                        correctness: false,
+                        text: 'Wrong Answer'
+                    }
+                ]
+            }, {
+                id: 003,
+                text: "Question Three",
+                type: 'single-line',
+                answer: "Answer"
+            }, {
+                id: 001,
+                text: 'Question One',
+                type: 'single-choice',
+                options: [
+                    {
+                        correctness: false,
+                        text: 'Wrong Answer'
+                    },
+                    {
+                        correctness: true,
+                        text: 'Right Answer'
+                    },
+                    {
+                        correctness: false,
+                        text: 'Wrong Anwer'
+                    }
+                ]
+            }, {
+                id: 002,
+                text: 'Question Two',
+                type: 'multiple-choice',
+                options: [
+                    {
+                        correctness: false,
+                        text: 'Wrong Answer'
+                    },
+                    {
+                        correctness: true,
+                        text: 'Right Answer'
+                    },
+                    {
+                        correctness: false,
+                        text: 'Wrong Answer'
+                    }
+                ]
+            }, {
+                id: 003,
+                text: "Question Three",
+                type: 'single-line',
+                answer: "Answer"
+            }, {
                 id: 001,
                 text: 'Question One',
                 type: 'single-choice',
@@ -434,8 +557,8 @@ var CurrentList;
 
 $("#do_search_button").click(function () {
     var temp = [];
-    CurrentList.forEach(function(t){
-        if(t.name.toLowerCase().includes($("#search-input").val().toLowerCase()) || t.description.toLowerCase().includes($("#search-input").val().toLowerCase())) temp.push(t);
+    CurrentList.forEach(function (t) {
+        if (t.name.toLowerCase().includes($("#search-input").val().toLowerCase()) || t.description.toLowerCase().includes($("#search-input").val().toLowerCase())) temp.push(t);
     })
     $("#search-input").val("");
     showTestList(temp);
@@ -444,8 +567,8 @@ $("#do_search_button").click(function () {
 $("#search-input").keyup(function () {
     console.log("Change");
     var temp = [];
-    CurrentList.forEach(function(t){
-        if(t.name.toLowerCase().includes($("#search-input").val().toLowerCase()) || t.description.toLowerCase().includes($("#search-input").val().toLowerCase())) temp.push(t);
+    CurrentList.forEach(function (t) {
+        if (t.name.toLowerCase().includes($("#search-input").val().toLowerCase()) || t.description.toLowerCase().includes($("#search-input").val().toLowerCase())) temp.push(t);
     });
     showTestList(temp);
 })
@@ -483,7 +606,7 @@ function initialiseTree() {
             $("#all_categories").append($("<ul><li id='" + encrypt(cats[0]) + "'>" + cats[0] + "</li></ul>"));
             $parent = $("#tree ul #" + encrypt(cats[0]));
         }
-        console.log($parent);
+        //console.log($parent);
         for (var i = 1; i < cats.length; i++) {
             var $temp = $parent.find("#" + encrypt(cats[i]));
             if ($temp.length == 0) {
@@ -491,7 +614,7 @@ function initialiseTree() {
                 $temp = $parent.find("#" + encrypt(cats[i]));
             }
             $parent = $temp;
-            console.log($parent);
+            //console.log($parent);
         }
 
         //console.log($parent);
@@ -502,28 +625,11 @@ function initialiseTree() {
     //console.log(getCategoryPath($("#subcat")));
     //console.log(getCategoryPath($("#subcat")));
 
-    $('#tree')
-    // listen for event
-        .on('changed.jstree', function (e, data) {
-            /*var i, j, r = [];
-            for(i = 0, j = data.selected.length; i < j; i++) {
-                //r.push(data.instance.get_node(data.selected[i]).text);
-                console.log(getCategoryPath($("#tree").jstree().get_selected(true)[0]));
-                console.log($("#tree").jstree().get_selected(true)[0]);
-            }*/
-            //console.log('get',$("#tree").jstree().get_selected(true)[0].id);
-            var categoryCurrent = getCategoryPath($("#tree").jstree().get_selected(true)[0]);
-            //console.log(categoryCurrent);
-            //console.log(getCategoryPath($("#tree").jstree().get_selected(true)[0]));
-            if($("#tree").jstree().get_selected(true)[0].id==="all_categories")initialiseList();
-            else initialiseListByCategory(categoryCurrent);
-            //console.log($("#tree").jstree().get_selected(true)[0]);
-            //$('#event_result').html('Selected: ' + r.join(', '));
-            //if(r[0].includes(""))
-            //console.log($("#"+r[0]).attr("id"));
-        })
-        // create the instance
-        .jstree();
+    $('#tree').on('changed.jstree', function (e, data) {
+        var categoryCurrent = getCategoryPath($("#tree").jstree().get_selected(true)[0]);
+        if ($("#tree").jstree().get_selected(true)[0].id === "all_categories") initialiseList();
+        else initialiseListByCategory(categoryCurrent);
+    }).jstree();
 
     return categories;
 }
@@ -563,7 +669,7 @@ function initialiseListByCategory(category) {
 }
 
 function encrypt(string) {
-    if(string==='all_categories') return 'all_categories';
+    if (string === 'all_categories') return 'all_categories';
     var res = "";
     for (var i = 0; i < string.length; i++) {
         res += string.charCodeAt(i) + "_";
@@ -585,8 +691,6 @@ exports.initialiseList = initialiseList;
 exports.initialiseListWithFilter = initialiseListByCategory;
 exports.initTree = initialiseTree;
 
-console.log(encrypt("abc d"));
-console.log(decrypt(encrypt("abc d")));
 },{"../info/test_list":1,"./templates":4}],7:[function(require,module,exports){
 
 },{}],8:[function(require,module,exports){
